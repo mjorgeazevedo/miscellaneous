@@ -27,7 +27,9 @@ public class Anagram {
 	}
 
 	/**
-	 * Quicksort implementation for sort anagram array
+	 * Quicksort implementation for sort anagram array.
+  	 * The big-O notation of the quicksort algorithm is O(n log n) 
+    	 * in the best case and average case, and O(n^2) in the worst case.
 	 * 
 	 * @param anagramArray
 	 * @param start array position
