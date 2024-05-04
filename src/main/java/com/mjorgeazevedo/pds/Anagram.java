@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Anagram {
 	
 	public static void main(String[] args) {
-		String[] anagramArray = {"cba", "def", "ghi", "abc", "fed", "igh"} ;
+		String[] anagramArray = {"cba", "def", "ytrewq", "hgi", "abc", "fed", "igh", "qwerty"} ;
 		
 		anagramSort(anagramArray);
 		
@@ -27,9 +27,7 @@ public class Anagram {
 	}
 
 	/**
-	 * Quicksort implementation for sort anagram array.
-  	 * The big-O notation of the quicksort algorithm is O(n log n) 
-    	 * in the best case and average case, and O(n^2) in the worst case.
+	 * Quicksort implementation for sort anagram array
 	 * 
 	 * @param anagramArray
 	 * @param start array position
@@ -85,6 +83,13 @@ public class Anagram {
 	 * @return calculated hash
 	 */
 	private static int hash(String s) {
-		return (s.charAt(1) << 8) + s.charAt(0) + s.charAt(2);
+		final byte[] bytes = s.getBytes();
+		int hashCode = 0;
+		
+		for (byte b : bytes) {
+			hashCode += Constants.PRIME_NUMBERS[b - 'a'];
+		}
+		
+		return hashCode;
 	}
 }
